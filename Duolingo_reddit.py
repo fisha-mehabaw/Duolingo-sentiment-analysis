@@ -2,11 +2,11 @@ import praw
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-# Use read-only mode — no login needed
+# Set up reddit
 reddit = praw.Reddit(
-    client_id="7OkPk72YmmFXj3Z4b3iO_Q",
-    client_secret="H3KCapBh5AwnAoB950-w-0ufZ7zbIA",
-    user_agent="duolingo_sentiment_analysis_for_marketing_assignment"
+    client_id="your_client_id", #mine: 7OkPk72YmmFXj3Z4b3iO_Q
+    client_secret="your_client_secret", #mine: H3KCapBh5AwnAoB950-w-0ufZ7zbIA
+    user_agent="your_user_agent", #duolingo_sentiment_analysis_for_marketing_assignment
 )
 
 # Fetch posts about Duolingo
