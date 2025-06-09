@@ -14,23 +14,6 @@ nltk.download('vader_lexicon')
 df = pd.read_csv("duolingo_sentiment.csv")
 print(df.head())
 
-
-sia = SentimentIntensityAnalyzer()
-
-# Apply sentiment analysis
-df['scores'] = df['comment'].apply(lambda comment: sia.polarity_scores(str(comment)))
-df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
-
-# Classify sentiment
-def classify_sentiment(score):
-    if score >= 0.05:
-        return 'Positive'
-    elif score <= -0.05:
-        return 'Negative'
-    else:
-        return 'Neutral'
-
-df['label'] = df['compound'].apply(classify_sentiment)
 print(df['label'].value_counts())
 
 # Plot pie chart
